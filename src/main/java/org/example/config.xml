@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- Hledaná fráze -->
+    <searchPhrase>playstation+5</searchPhrase>
+
+    <!-- Databázové připojení -->
+    <dbUrl>jdbc:mysql://localhost:3306/bazos</dbUrl>
+    <dbUser>root</dbUser>
+    <dbPassword></dbPassword>
+
+    <!-- Cenové rozpětí -->
+    <minPrice>5000</minPrice>
+    <maxPrice>7000</maxPrice>
+
+    <!-- Telegram notifikace -->
+    <telegramNotifications>true</telegramNotifications>
+    <telegramToken>8100700498:AAE7DhEBG0vwsdYRVOoL2F2xBLQnuUXUU30</telegramToken>
+    <telegramChatId>6096518663</telegramChatId>
+</config>
