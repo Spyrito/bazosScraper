@@ -21,6 +21,7 @@
             <version>1.15.4</version> <!-- Nejnovější verze může být odlišná, ověřte na Maven Central -->
         </dependency>
 
+
         <!-- MySQL Connector pro připojení k databázi -->
         <dependency>
             <groupId>mysql</groupId>
@@ -36,11 +37,44 @@
         </dependency>
     </dependencies>
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-            </resource>
-        </resources>
+        <plugins>
+            <!-- Maven Shade Plugin for creating executable JAR with dependencies -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+                            <manifestEntries>
+                                <Main-Class>api.bazos.MainMenu</Main-Class> <!-- Hlavní třída -->
+                            </manifestEntries>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Maven Jar Plugin to ensure the main class is included in the manifest -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Main-Class>api.bazos.MainMenu</Main-Class>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
+
 
 </project>
