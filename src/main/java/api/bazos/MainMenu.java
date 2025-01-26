@@ -1,12 +1,19 @@
 package api.bazos;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class MainMenu {
     public static void main(String[] args) {
         ConfigLoader configLoader = new ConfigLoader();
-        Config config = configLoader.loadConfig("src/main/resources/config.xml");
 
+        // Získání cesty k souboru `config.xml`, který je vedle JAR souboru
+        Path currentPath = Paths.get("").toAbsolutePath(); // Aktuální pracovní adresář
+        Path configPath = currentPath.resolve("config.xml"); // Cesta ke config.xml
+
+        // Načtení konfigurace
+        Config config = configLoader.loadConfig(configPath.toString());
         if (config == null) {
-            System.out.println("Nepodařilo se načíst konfiguraci.");
+            System.out.println("Nepodařilo se načíst konfiguraci z: " + configPath);
             return;
         }
 

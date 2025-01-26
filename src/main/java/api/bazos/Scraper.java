@@ -26,7 +26,7 @@ class Scraper {
             boolean hasNextPage = true;
             int offset = 0;
             boolean firstPage = true;
-            int maxCharSendTitle = 70;
+            int maxCharSendTitle = 80;
 
             while (hasNextPage) {
                 try {
