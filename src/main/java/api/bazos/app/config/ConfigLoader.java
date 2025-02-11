@@ -1,11 +1,15 @@
-package api.bazos;
+package api.bazos.app.config;
+
+import api.bazos.app.SearchConfig;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-class ConfigLoader {
+public class ConfigLoader {
     public Config loadConfig(String filePath) {
         try {
             File configFile = new File(filePath);
@@ -30,6 +34,18 @@ class ConfigLoader {
                 searchConfig.setPhrase(searchElement.getElementsByTagName("phrase").item(0).getTextContent());
                 searchConfig.setMinPrice(Double.parseDouble(searchElement.getElementsByTagName("minPrice").item(0).getTextContent()));
                 searchConfig.setMaxPrice(Double.parseDouble(searchElement.getElementsByTagName("maxPrice").item(0).getTextContent()));
+
+                // Zpracování blokovaných slov
+                org.w3c.dom.NodeList blockedWordsNodes = searchElement.getElementsByTagName("blockedWords");
+                List<String> blockedWords = new ArrayList<>();
+                if (blockedWordsNodes.getLength() > 0) {
+                    String blockedWordsText = blockedWordsNodes.item(0).getTextContent();
+                    if (!blockedWordsText.isEmpty()) {
+                        blockedWords = Arrays.asList(blockedWordsText.split(","));
+                    }
+                }
+                searchConfig.setBlockedWords(blockedWords);
+
                 config.getSearches().add(searchConfig);
             }
 
@@ -48,4 +64,3 @@ class ConfigLoader {
         }
     }
 }
-

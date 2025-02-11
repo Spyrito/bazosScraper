@@ -1,4 +1,6 @@
-package api.bazos;
+package api.bazos.app.config;
+
+import api.bazos.app.SearchConfig;
 
 import java.util.List;
 

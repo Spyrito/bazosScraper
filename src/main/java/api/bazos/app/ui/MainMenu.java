@@ -1,4 +1,10 @@
-package api.bazos;
+package api.bazos.app.ui;
+import api.bazos.app.config.ConfigLoader;
+import api.bazos.app.Scraper;
+import api.bazos.app.config.Config;
+import api.bazos.app.db.DatabaseManager;
+import api.bazos.app.notifiaction.TelegramNotifier;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 

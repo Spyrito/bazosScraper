@@ -1,11 +1,13 @@
-package api.bazos;
+package api.bazos.app.db;
+
+import api.bazos.app.config.Config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-class DatabaseManager {
+public class DatabaseManager {
     private final Config config;
 
     public DatabaseManager(Config config) {

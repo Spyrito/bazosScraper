@@ -53,7 +53,7 @@
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <shadedArtifactAttached>false</shadedArtifactAttached>
                             <manifestEntries>
-                                <Main-Class>api.bazos.MainMenu</Main-Class> <!-- Hlavní třída -->
+                                <Main-Class>api.bazos.app.ui.MainMenu</Main-Class> <!-- Hlavní třída -->
                             </manifestEntries>
                         </configuration>
                     </execution>
@@ -68,7 +68,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Main-Class>api.bazos.MainMenu</Main-Class>
+                            <Main-Class>api.bazos.app.ui.MainMenu</Main-Class>
                         </manifestEntries>
                     </archive>
                 </configuration>

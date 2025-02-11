@@ -6,6 +6,7 @@
             <phrase>playstation+5</phrase>
             <minPrice>4799</minPrice>
             <maxPrice>6001</maxPrice>
+            <blockedWords>mechanika</blockedWords>
         </search>
     </searches>
 

@@ -1,9 +1,12 @@
-package api.bazos;
+package api.bazos.app;
 
-class SearchConfig {
+import java.util.List;
+
+public class SearchConfig {
     private String phrase;
     private double minPrice;
     private double maxPrice;
+    private List<String> blockedWords;
 
     // Gettery a settery
     public String getPhrase() {
@@ -28,5 +31,13 @@ class SearchConfig {
 
     public void setMaxPrice(double maxPrice) {
         this.maxPrice = maxPrice;
+    }
+
+    public List<String> getBlockedWords() {
+        return blockedWords;
+    }
+
+    public void setBlockedWords(List<String> blockedWords) {
+        this.blockedWords = blockedWords;
     }
 }
