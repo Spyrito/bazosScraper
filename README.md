@@ -9,23 +9,6 @@ Jednoduchý Java nástroj pro automatické sledování inzerátů na [bazos.cz](
 - Posílá oznámení o nových inzerátech přes Telegram
 - Jednoduché textové rozhraní pro spouštění jednotlivých vyhledávání
 
-## Struktura projektu
-src/
-└── main/
-└── java/
-└── api.bazos.app/
-├── Scraper.java # Hlavní třída pro scraping
-├── SearchConfig.java # Konfigurace pro hledání
-├── config/
-│ ├── Config.java # Globální konfigurace
-│ └── ConfigLoader.java # Načítání JSON konfigurace
-├── db/
-│ └── DatabaseManager.java # SQLite databáze
-├── notifiaction/
-│ └── TelegramNotifier.java # Telegram boti 
-└── ui/
-└── MainMenu.java # Textové rozhraní
-
 ## ⚙️ Konfigurace (`config.xml`)
 
 Ukázka souboru `config.xml`, který definuje chování programu:
