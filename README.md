@@ -11,32 +11,7 @@ Jednoduchý Java nástroj pro automatické sledování inzerátů na [bazos.cz](
 
 ## ⚙️ Konfigurace (`config.xml`)
 
-Ukázka souboru `config.xml`, který definuje chování programu:
+Ukázka configu je v souboru `config.xml`, který definuje chování programu.
 
-<?xml version="1.0" encoding="UTF-8"?>
-<config>
-    <!-- Hledané fráze, mezery nahradit "+" -->
-    <searches>
-        <search>
-            <phrase>playstation+5</phrase>
-            <minPrice>4799</minPrice>
-            <maxPrice>6001</maxPrice>
-            <blockedWords>mechanika</blockedWords>
-        </search>
-    </searches>
-
-    <!-- Databázové připojení -->
-    <dbUrl>jdbc:mysql://localhost:3306/bazos</dbUrl>
-    <dbUser>root</dbUser>
-    <dbPassword></dbPassword>
-
-    <!-- Časová mezera mezi kontrolami -->
-    <waitTimeMinutes>10</waitTimeMinutes>
-
-    <!-- Telegram notifikace -->
-    <telegramNotifications>true</telegramNotifications>
-    <telegramToken>8100700498:AAE7DhEBG0vwsdYRVOoL2F2xBLQnuUXUU30</telegramToken>
-    <telegramChatId>6096518663</telegramChatId>
-</config>
 
 
