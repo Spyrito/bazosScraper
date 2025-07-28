@@ -20,6 +20,6 @@
 
     <!-- Telegram notifikace -->
     <telegramNotifications>true</telegramNotifications>
-    <telegramToken>8100700498:AAE7DhEBG0vwsdYRVOoL2F2xBLQnuUXUU30</telegramToken>
-    <telegramChatId>6096518663</telegramChatId>
+    <telegramToken></telegramToken>
+    <telegramChatId></telegramChatId>
 </config>
